@@ -1383,3 +1383,88 @@ img {
   }
 }
 
+/* Alap konténer: az oldal aljára rögzítjük */
+.cookie {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #eee;
+}
+
+/* Szöveg stílusa */
+.cookie p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Gombok tárolója */
+.cookie-gombok {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Közös gomb stílusok */
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* "Beállítások" gomb - kevésbé hangsúlyos */
+.cookie-beallitasok {
+    background-color: transparent;
+    color: #666;
+    text-decoration: underline;
+}
+
+.cookie-beallitasok:hover {
+    color: #000;
+    background-color: #f0f0f0;
+}
+
+/* "Elfogadom" gomb - kiemelt (Call to Action) */
+.cookie-elfogad {
+    background-color: #2563eb;
+    color: white;
+}
+
+.cookie-elfogad:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Mobilos nézet: a gombok egymás alá kerülnek, ha kevés a hely */
+@media (max-width: 480px) {
+    .cookie {
+        bottom: 10px;
+        padding: 15px;
+    }
+    
+    .cookie-gombok {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
