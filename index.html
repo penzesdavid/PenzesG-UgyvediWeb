@@ -363,11 +363,15 @@
         </div>
 
         <div class="map-wrapper">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.135017415178!2d21.62345678901234!3d47.54123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47470e6789abcdef%3A0x123456789abcdef!2zRGVicmVjZW4sIEJlbSB0w6lyIDIyLCA0MDI2!5e0!3m2!1shu!2shu!4v1711554258000"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+          <iframe id="google-map" width="100%" height="100%" style="border:0; display:none;" loading="lazy"
+            referrerpolicy="no-refferrer-when-downgrade"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.135017415178!2d21.62345678901234!3d47.54123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47470e6789abcdef%3A0x123456789abcdef!2zRGVicmVjZW4sIEJlbSB0w6lyIDIyLCA0MDI2!5e0!3m2!1shu!2shu!4v1711554258000"
+            allowfullscreen>
           </iframe>
+          <div id="map-placeholder"
+            style="background: #f0f0f0; height: 450px; display: flex; align-items: center; justify-content: center;">
+            <p>A térkép megtekintéséhez el kell fogadnod a sütiket.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -418,7 +422,7 @@
           <ul class="footer-links">
             <li><a href="src/adatvedelem.html" class="footer-link">Adatkezelési tájékoztató</a></li>
             <li><a href="src/impresszum.html" class="footer-link">Impresszum</a></li>
-            <li><a href="src/sutik-kezelese.html" class="footer-link">Sütik kezelése</a></li>
+            <li><a href="src/sutik-kezelese.html" class="footer-link">Sütik kezelése</a> <a href="#" id="reopen-cookie-settings" class="footer-link">(Süti beállítások)</a></li>
           </ul>
         </div>
       </div>
@@ -442,6 +446,39 @@
       <div class="cookie-gombok">
         <div><button type="button" id="cookie-beallitasok" class="cookie-beallitasok">Süti beállítások</button></div>
         <div><button type="button" id="cookie-elfogad" class="cookie-elfogad">Elfogadom</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div id="cookie-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3>Süti beállítások</h3>
+        <p>Válaszd ki, mely sütik használatához járulsz hozzá:</p>
+
+        <div class="cookie-options">
+          <div class="option-item">
+            <div class="option-info">
+              <strong>Alapvető sütik</strong>
+              <span>Az oldal működéséhez elengedhetetlenek.</span>
+            </div>
+            <input type="checkbox" checked disabled>
+          </div>
+          <div class="option-item">
+            <div class="option-info">
+              <strong>Külső tartalmak (Térkép)</strong>
+              <span>Lehetővé teszi a Google Maps megjelenítését.</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="check-maps">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" id="save-settings" class="btn-save">Beállítások mentése</button>
+        </div>
       </div>
     </div>
   </section>
