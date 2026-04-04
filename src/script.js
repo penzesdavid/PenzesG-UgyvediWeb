@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (mapsCheckbox) mapsCheckbox.checked = true;
         activateContent();
     } else if (currentConsent === "rejected") {
-        if (cookieBanner) cookieBanner.style.display = "none";
+        if (cookieBanner) cookieBanner.style.display = "flex";
         if (mapsCheckbox) mapsCheckbox.checked = false;
         deactivateContent();
     }
