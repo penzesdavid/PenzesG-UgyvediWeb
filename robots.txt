@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /src/adatvedelem.html
+Disallow: /src/impresszum.html
+Disallow: /src/sutik-kezelese.html
