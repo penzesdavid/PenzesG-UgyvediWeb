@@ -1,3 +1,6 @@
+// ==========================================
+// Mobil Menü Kezelés
+// ==========================================
 const mobileToggle = document.querySelector('#mobile-menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
 const menuIcon = document.querySelector('#menu-icon');
@@ -49,18 +52,63 @@ window.addEventListener('resize', () => {
 syncMobileMenuUi();
 
 // Scroll Reveal
+document.documentElement.classList.add('js-reveal');
 const revealElements = document.querySelectorAll('.reveal');
-const revealOnScroll = () => {
-    revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.85) {
-            el.classList.add('active');
-        }
-    });
-};
 
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // Initial check
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+} else {
+    const revealOnScroll = () => {
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.92) {
+                el.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+    window.addEventListener('resize', revealOnScroll, { passive: true });
+    window.addEventListener('load', revealOnScroll);
+    revealOnScroll();
+}
+
+// Vissza a tetejére gomb kezelése
+const backToTopBtn = document.querySelector('#back-to-top');
+if (backToTopBtn) {
+    const toggleBackToTop = () => {
+        if (window.scrollY > 350) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    window.addEventListener('load', toggleBackToTop);
+    document.addEventListener('DOMContentLoaded', toggleBackToTop);
+    toggleBackToTop();
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 
 //Cookie Consent
 // Ez a rész a cookie consent kezeléséért felelős
@@ -166,4 +214,32 @@ document.addEventListener("DOMContentLoaded", () => {
             cookieModal.style.display = "none";
         }
     });
+
+    // --- 5. HÁTTÉRVIDEÓ KEZELÉSE ---
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.muted = true;
+        const playVideo = () => {
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+            }
+        };
+
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            heroVideo.pause();
+        } else {
+            playVideo();
+        }
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
+                if (e.matches) {
+                    heroVideo.pause();
+                } else {
+                    playVideo();
+                }
+            });
+        }
+    }
 });

@@ -4,257 +4,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Pénzes Gergely egyéni ügyvéd</title>
+  <title>Dr. Pénzes Gergely egyéni ügyvéd · Debrecen</title>
+  <meta name="description"
+    content="Több mint 20 éves tapasztalattal rendelkező egyéni ügyvéd Debrecenben. Polgári jog, büntetőjog, családjog és gazdasági jogi tanácsadás és peres képviselet." />
   <link rel="canonical" href="https://drpenzesugyved.hu/">
   <link rel="icon" type="image/png" href="./img/favicon.png" sizes="96x96">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="src/fonts.css">
   <link rel="stylesheet" href="src/index.css">
+
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container navbar-container">
-      <a href="./index.html">
-        <div class="logo">
-          <div class="logo-icon">
-            <img src="./img/logo.png" alt="" width="64px;" style="border-radius: 50px;">
-          </div>
-          <div class="logo-text">
-            <span class="logo-name">Dr. Pénzes Gergely</span>
-            <span class="logo-sub">Egyéni ügyvéd</span>
-          </div>
-        </div>
-      </a>
+  <!-- Felső Navigációs Sáv -->
+  <header>
+    <nav class="navbar" aria-label="Fő navigáció">
+      <div class="container navbar-container">
+        <a href="./index.html" class="logo" aria-label="Dr. Pénzes Gergely ügyvéd kezdőlap">
+          <img src="./img/logo.png" alt="Dr. Pénzes Gergely logó" class="logo-icon-img" width="52" height="52">
+          <span class="logo-name">Dr. Pénzes Gergely</span>
+        </a>
 
-      <!-- Desktop Menu -->
-      <div class="nav-links">
-        <a href="#szakterületek" class="nav-link">Szakterületek</a>
-        <a href="#rólam" class="nav-link">Rólam</a>
-        <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
-        <a href="#kapcsolat" class="btn-consult">Konzultáció</a>
+        <!-- Asztali Navigáció -->
+        <div class="nav-links">
+          <a href="#szakterületek" class="nav-link">Szakterületek</a>
+          <a href="#rólam" class="nav-link">Rólam</a>
+          <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
+
+
+
+          <a href="#kapcsolat" class="btn-consult">Konzultáció kérése</a>
+        </div>
+
+        <!-- Mobil Menü Gomb -->
+        <button type="button" id="mobile-menu-toggle" class="mobile-toggle" aria-controls="mobile-menu"
+          aria-expanded="false" aria-label="Menü megnyitása">
+          <span class="mobile-toggle-icons" aria-hidden="true">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="mobile-toggle-icon">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="mobile-toggle-icon hidden">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </span>
+        </button>
       </div>
 
-      <!-- Mobile Toggle -->
-      <button type="button" id="mobile-menu-toggle" class="mobile-toggle" aria-controls="mobile-menu"
-        aria-expanded="false" aria-label="Menü megnyitása">
-        <span class="mobile-toggle-icons" aria-hidden="true">
-          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-menu mobile-toggle-icon">
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-          </svg>
-          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-x mobile-toggle-icon hidden">
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
-        </span>
-      </button>
-    </div>
+      <!-- Mobil Menü Legördülő -->
+      <div id="mobile-menu" class="mobile-menu" aria-label="Mobil navigáció">
+        <a href="#szakterületek" class="mobile-nav-link">Szakterületek</a>
+        <a href="#rólam" class="mobile-nav-link">Rólam</a>
+        <a href="#kapcsolat" class="mobile-nav-link">Kapcsolat</a>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu" aria-label="Mobil navigáció">
-      <a href="#szakterületek" class="mobile-nav-link">Szakterületek</a>
-      <a href="#rólam" class="mobile-nav-link">Rólam</a>
-      <a href="#kapcsolat" class="mobile-nav-link">Kapcsolat</a>
-      <a href="#kapcsolat" class="btn-mobile-consult">Konzultáció</a>
-    </div>
-  </nav>
+        <a href="#kapcsolat" class="btn-mobile-consult">Konzultáció kérése</a>
+      </div>
+    </nav>
+  </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Szekció -->
     <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-bg-accent" aria-hidden="true"></div>
-      <div class="hero-gradient" aria-hidden="true"></div>
-      <div class="container hero-wrap">
+      <!-- Háttérvideó és elegáns átmeneti réteg -->
+      <div class="hero-video-bg" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./img/hero-video-poster.jpg">
+          <source src="./Debrecen.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="container">
         <div class="hero-grid">
-          <div class="hero-content-inner">
-            <span class="hero-tagline">
-              <span class="hero-tagline-item">Szakértelem</span>
-              <span class="hero-tagline-sep" aria-hidden="true"></span>
-              <span class="hero-tagline-item">Bizalom</span>
-              <span class="hero-tagline-sep" aria-hidden="true"></span>
-              <span class="hero-tagline-item">Integritás</span>
-            </span>
+          <div class="hero-content reveal">
+
             <h1 class="hero-title" id="hero-heading">
               Dr. Pénzes Gergely
             </h1>
-            <p class="hero-role">Egyéni ügyvéd · Debrecen</p>
+            <p class="hero-role">Egyéni ügyvéd · Debrecen, Bem tér 22.</p>
             <p class="hero-desc">
-              Több mint 20 éves tapasztalattal nyújtok prémium jogi szolgáltatásokat magánszemélyek és vállalkozások
-              részére. Hiszek abban, hogy minden ügy egyedi figyelmet érdemel.
+              Több mint 20 éves szakmai tapasztalattal nyújtok magas szintű jogi képviseletet és személyre szabott
+              tanácsadást magánszemélyek és gazdasági társaságok részére. Hiszek abban, hogy minden ügy egyedi figyelmet
+              és alapos felkészültséget érdemel.
             </p>
+
             <div class="hero-actions">
               <a href="#kapcsolat" class="btn-primary">
                 Kérjen időpontot
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-chevron-right btn-primary-icon">
+                  class="btn-primary-icon" aria-hidden="true">
                   <path d="m9 18 6-6-6-6" />
                 </svg>
               </a>
-              <a href="#szakterületek" class="btn-secondary">Szakterületeim</a>
+              <a href="#szakterületek" class="btn-secondary">Szakterületek megtekintése</a>
             </div>
-            <ul class="hero-highlights">
-              <li class="hero-highlight">
-                <span class="hero-highlight-value">20+</span>
-                <span class="hero-highlight-label">év tapasztalat</span>
-              </li>
-              <li class="hero-highlight">
-                <span class="hero-highlight-value">2000+</span>
-                <span class="hero-highlight-label">lezárt ügy</span>
-              </li>
-              <li class="hero-highlight">
-                <span class="hero-highlight-value">4026</span>
-                <span class="hero-highlight-label">Debrecen, Bem tér</span>
-              </li>
-            </ul>
           </div>
 
-          <div class="hero-image-container reveal" style="transition-delay: 200ms;">
-            <div class="hero-image-wrapper">
-              <img class="hero-image" src="./img/kozeliuj.png" alt="Dr. Pénzes Gergely portré">
-              <div class="hero-image-border" aria-hidden="true"></div>
-              <div class="hero-image-shine" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portré Szekció -->
+    <section class="portrait-section" aria-labelledby="portrait-heading">
+      <div class="container">
+        <div class="portrait-grid">
+          <!-- Portré kép -->
+          <div class="portrait-image-wrap reveal">
+            <div class="portrait-image-inner">
+              <img class="portrait-image" src="./img/kozeliuj.png" alt="Dr. Pénzes Gergely egyéni ügyvéd portréja"
+                width="600" height="750">
             </div>
-            <div class="hero-badge">
-              <div aria-hidden="true">
-                <img src="./img/logo.png" alt="logo" width="64px;">
-              </div>
-              <div class="hero-badge-text">
-                <div class="badge-value">Dr. Pénzes Gergely</div>
-                <div class="badge-label">Egyéni ügyvéd</div>
-              </div>
-            </div>
+          </div>
+
+          <!-- Tartalom -->
+          <div class="portrait-content reveal">
+            <span class="portrait-tagline">Az ügyvéd</span>
+            <h2 class="portrait-title" id="portrait-heading">Tapasztalat, amelyre számíthat.</h2>
+            <p class="portrait-desc">
+              Több mint két évtizedes joggyakorlat során megszerzett mély jogi tudással és határozott képviselettel
+              állok ügyfeleim mellett. Ügyénél nem csupán jogi szakértőt, hanem megbízható partnert kap.
+            </p>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Practice Areas -->
-    <section id="szakterületek" class="section" style="background-color: var(--color-white);">
+    <!-- Szakterületek (Elegáns Szerkesztőségi Rács) -->
+    <section id="szakterületek" class="section" aria-labelledby="szakteruletek-heading">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-title-wrapper">
-            <span class="section-tagline">Miben segíthetek?</span>
-            <h2 class="section-title">Szakértői megoldások <br />minden élethelyzetre.</h2>
-          </div>
-          <div class="section-divider"></div>
+          <span class="section-tagline">Szakterületek</span>
+          <h2 class="section-title" id="szakteruletek-heading">Szakértői megoldások minden élethelyzetre.</h2>
+          <p class="section-desc">Megbízható, diszkrét és határozott jogi képviselet magánszemélyek és gazdasági
+            társaságok részére Debrecenben.</p>
         </div>
 
-        <div class="grid-areas reveal">
-          <!-- Polgári Jog -->
-          <div class="area-card">
-            <span class="area-number">01</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="area-icon">
+        <div class="practice-grid reveal">
+          <!-- 1. Polgári Jog -->
+          <div class="practice-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+              class="practice-icon" aria-hidden="true">
               <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
               <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
               <path d="M7 21h10" />
               <path d="M12 3v18" />
               <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
             </svg>
-            <h3 class="area-title">Polgári Jog</h3>
-            <p class="area-desc">Szerződések, kártérítési ügyek és ingatlanjog teljes körű képviselete.</p>
-            <a href="#" class="area-link">
-              Részletek megtekintése
-              <div class="area-link-line"></div>
-            </a>
+            <h3 class="practice-title">Polgári Jog és Ingatlanügyletek</h3>
           </div>
-          <!-- Büntetőjog -->
-          <div class="area-card">
-            <span class="area-number">02</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="area-icon">
+
+          <!-- 2. Büntetőjog -->
+          <div class="practice-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+              class="practice-icon" aria-hidden="true">
               <path
                 d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
               <path d="m9 12 2 2 4-4" />
             </svg>
-            <h3 class="area-title">Büntetőjog</h3>
-            <p class="area-desc">Hatékony védelem és jogi tanácsadás a büntetőeljárás minden szakaszában.</p>
-            <a href="#" class="area-link">
-              Részletek megtekintése
-              <div class="area-link-line"></div>
-            </a>
+            <h3 class="practice-title">Büntetőjogi Védelem</h3>
           </div>
-          <!-- Családjog -->
-          <div class="area-card">
-            <span class="area-number">03</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="area-icon">
+
+          <!-- 3. Családjog -->
+          <div class="practice-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+              class="practice-icon" aria-hidden="true">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
               <circle cx="19" cy="11" r="3" />
             </svg>
-            <h3 class="area-title">Családjog</h3>
-            <p class="area-desc">Válás, gyermekelhelyezés és vagyonmegosztás diszkrét kezelése.</p>
-            <a href="#" class="area-link">
-              Részletek megtekintése
-              <div class="area-link-line"></div>
-            </a>
+            <h3 class="practice-title">Családjog és Vagyonmegosztás</h3>
           </div>
-          <!-- Gazdasági Jog -->
-          <div class="area-card">
-            <span class="area-number">04</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="area-icon">
+
+          <!-- 4. Gazdasági Jog -->
+          <div class="practice-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+              class="practice-icon" aria-hidden="true">
               <path d="M3 3v18h18" />
               <path d="m19 9-5 5-4-4-3 3" />
             </svg>
-            <h3 class="area-title">Gazdasági Jog</h3>
-            <p class="area-desc">Cégalapítás, társasági jogi tanácsadás és üzleti viták rendezése.</p>
-            <a href="#" class="area-link">
-              Részletek megtekintése
-              <div class="area-link-line"></div>
-            </a>
+            <h3 class="practice-title">Gazdasági és Társasági Jog</h3>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="rólam" class="section">
+    <!-- Rólam Szekció -->
+    <section id="rólam" class="section" aria-labelledby="rolam-heading">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-image-container reveal">
-            <div class="about-image-wrapper">
-              <img src="./img/iroda1.jpg" alt="Bem tér 22.">
+        <div class="about-editorial">
+          <!-- Bal oldal: Iroda Fotó modern keretben -->
+          <div class="about-photo-wrapper reveal">
+            <div class="about-photo-frame">
+              <img src="./img/iroda1.jpg" alt="Dr. Pénzes Gergely Ügyvédi Iroda - Bem tér 22." class="about-photo"
+                width="600" height="338">
             </div>
-            <div class="about-image-frame"></div>
           </div>
 
-          <div class="reveal" style="transition-delay: 200ms;">
+          <!-- Jobb oldal: Szakmai Hitvallás és Értékek -->
+          <div class="about-content reveal">
             <span class="section-tagline">Rólam</span>
-            <h2 class="section-title" style="margin-bottom: 2.5rem;">
-              Elkötelezettség a <br />
-              <span class="italic">jogi kiválóság</span> mellett.
+            <h2 class="section-title" id="rolam-heading">
+              Elkötelezettség a jogi kiválóság mellett.
             </h2>
-            <div
-              style="display: flex; flex-direction: column; gap: 2rem; color: rgba(15, 23, 42, 0.7); font-weight: 300; line-height: 1.6; font-size: 1.125rem;">
-              <p>
-                Irodám alapítása óta arra törekszem, hogy ügyfeleim számára ne csupán jogi képviseletet, hanem valódi
-                megoldásokat nyújtsak. Számomra a jog nem csupán szabályok összessége, hanem eszköz az igazság
-                érvényesítésére.
-              </p>
-              <p>
-                Hiszek a transzparens kommunikációban és a precíz munkavégzésben. Legyen szó bonyolult peres eljárásról
-                vagy egyszerű tanácsadásról, minden ügyet ugyanolyan magas szakmai színvonalon kezelek.
-              </p>
-            </div>
+            <blockquote class="about-quote">
+              „Irodám alapítása óta arra törekszem, hogy ügyfeleim számára ne csupán jogi képviseletet, hanem valódi,
+              kézzelfogható megoldásokat nyújtsak.”
+            </blockquote>
 
-            <div class="about-stats">
-              <div>
-                <div class="stat-value">20+</div>
-                <div class="stat-label">Év tapasztalat</div>
+            <!-- Szakmai alapértékek -->
+            <div class="about-pillars">
+              <div class="about-pillar-item">
+                <h3 class="about-pillar-title">Teljes diszkréció</h3>
+                <p class="about-pillar-desc">Szigorú ügyvédi titoktartás</p>
               </div>
-              <div>
-                <div class="stat-value">2000+</div>
-                <div class="stat-label">Sikeres ügy</div>
+
+              <div class="about-pillar-item">
+                <h3 class="about-pillar-title">Személyes figyelem</h3>
+                <p class="about-pillar-desc">Közvetlen kapcsolattartás</p>
+              </div>
+
+              <div class="about-pillar-item">
+                <h3 class="about-pillar-title">Alapos felkészültség</h3>
+                <p class="about-pillar-desc">Körültekintő jogi stratégia</p>
               </div>
             </div>
           </div>
@@ -262,151 +245,218 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="kapcsolat" class="section contact">
-      <div class="contact-bg-accent"></div>
-      <div class="container contact-content">
-        <div class="reveal">
-          <span class="section-tagline" style="color: #fff;">Kapcsolat</span>
-          <img src="./img/logo.png" alt="logo" style="width:128px; margin: auto;">
-          <h2 class="section-title" style="margin-bottom: 3rem; color: var(--color-paper);">Kezdjük el a <br /><span
-              class="italic">közös munkát.</span></h2>
-          <p
-            style="color: rgba(248, 250, 252, 0.5); margin-bottom: 4rem; font-weight: 300; font-size: 1.125rem; line-height: 1.6; max-width: 32rem; margin-left: auto; margin-right: auto;">
-            Kérdése van? Keressen bizalommal az alábbi elérhetőségek bármelyikén.
+    <!-- Kapcsolat Szekció -->
+    <section id="kapcsolat" class="contact-section" aria-labelledby="kapcsolat-heading">
+      <div class="container">
+        <div class="contact-header reveal">
+          <div class="contact-header-brand">
+            <img src="./img/logo.png" alt="Dr. Pénzes Gergely logó" class="contact-header-logo" width="64" height="64">
+          </div>
+          <span class="contact-tagline">Kapcsolatfelvétel</span>
+          <h2 class="contact-title" id="kapcsolat-heading">Kezdjük el a közös munkát.</h2>
+          <p class="contact-desc">
+            Kérdése van vagy jogi segítségre van szüksége? - Vegye fel velem a kapcsolatot bizalommal az
+            alábbi elérhetőségek bármelyikén.
           </p>
 
-          <div class="contact-grid">
-            <div class="contact-item">
-              <div class="contact-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="contact-icon">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
+        </div>
+
+        <div class="contact-grid reveal">
+          <!-- Iroda Címe -->
+          <div class="contact-item-card">
+            <div class="contact-item-main">
+              <div class="contact-item-top">
+                <span class="contact-item-label">Iroda címe</span>
+                <div class="contact-item-icon-wrap" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="contact-item-icon">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
               </div>
-              <div>
-                <h4 class="contact-label">Iroda</h4>
-                <p class="contact-value">4026 Debrecen, Bem tér 22.</p>
+              <div class="contact-item-val">
+                4026 Debrecen,<br />Bem tér 22.
               </div>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <div class="contact-item-footer">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Debrecen,+Bem+tér+22,+4026" target="_blank"
+                rel="noopener noreferrer" class="contact-action-btn">
+                <span>Útvonaltervezés</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="contact-icon">
+                  aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Telefonszámok (Kiemelt) -->
+          <div class="contact-item-card contact-card-featured">
+            <div class="contact-card-badge-row">
+              <span class="contact-featured-badge">Azonnali elérés</span>
+            </div>
+            <div class="contact-item-main">
+              <div class="contact-item-top">
+                <span class="contact-item-label">Telefonszámok</span>
+                <div class="contact-item-icon-wrap" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="contact-item-icon">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="contact-item-val contact-item-val-featured">
+                <span class="contact-phone-highlight"><a href="tel:+36303840135">+36 30 384 0135</a></span>
+                <span class="contact-phone-secondary">Iroda: <a href="tel:+3652322900">+36 52 322 900</a></span>
+              </div>
+            </div>
+            <div class="contact-item-footer">
+              <a href="tel:+36303840135" class="contact-action-btn contact-action-btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
+                <span>Mobilhívás indítása</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Email Cím -->
+          <div class="contact-item-card">
+            <div class="contact-item-main">
+              <div class="contact-item-top">
+                <span class="contact-item-label">Elektronikus levél</span>
+                <div class="contact-item-icon-wrap" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="contact-item-icon">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
               </div>
-              <div>
-                <h4 class="contact-label">Telefon</h4>
-                <p class="contact-value">Mobil: +36 30 384 0135 Iroda: +36 52 322 900</p>
+              <div class="contact-item-val">
+                <a href="mailto:dr.penzes@enternet.hu">dr.penzes@enternet.hu</a>
               </div>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <div class="contact-item-footer">
+              <a href="mailto:dr.penzes@enternet.hu" class="contact-action-btn">
+                <span>Email küldése</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="contact-icon">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
                 </svg>
-              </div>
-              <div>
-                <h4 class="contact-label">Email</h4>
-                <p class="contact-value"><a href="mailto:dr.penzes@enternet.hu"
-                    class="contact-link">dr.penzes@enternet.hu</a></p>
-              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ügyfélfogadási megjegyzés -->
+        <div class="contact-notice reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="contact-notice-icon" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Személyes konzultáció kizárólag előzetes telefonos időpontegyeztetés alapján.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galéria Szekció -->
+    <section class="section office-gallery" id="tovabbikepek" aria-labelledby="galeria-heading">
+      <div class="container">
+        <div class="section-header reveal" style="margin-bottom: 2.5rem;">
+          <span class="section-tagline">Galéria</span>
+          <h2 class="section-title" id="galeria-heading">Iroda helyszíne</h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-card">
+            <div class="gallery-media">
+              <img src="./img/iroda3.jpg" alt="Dr. Pénzes Gergely ügyvédi iroda épülete - Debrecen, Bem tér 22."
+                class="gallery-img" width="600" height="375">
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-media">
+              <img src="./img/iroda2.jpg" alt="Ügyvédi iroda belső tárgyaló" class="gallery-img" width="600"
+                height="375">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section office-gallery reveal" id="tovabbikepek">
+    <!-- Google Térkép Szekció -->
+    <section class="section" aria-labelledby="terkep-heading">
       <div class="container">
-        <div class="row g-3 g-md-4">
-          <div class="col-12 col-md-6">
-            <div class="office-gallery-card">
-              <div class="office-gallery-media">
-                <img src="./img/iroda3.jpg" alt="Iroda – Debrecen, Bem tér 22.">
-              </div>
-              <p class="office-gallery-caption">Debrecen, Bem tér 22.</p>
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="office-gallery-card">
-              <div class="office-gallery-media">
-                <img src="./img/iroda2.jpg" alt="Iroda belső">
-              </div>
-              <p class="office-gallery-caption">Irányítószám: 4026</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Google Maps -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="maps-header">
-          <div style="max-width: 32rem;">
+        <div class="maps-header reveal">
+          <div>
             <span class="section-tagline">Megközelítés</span>
-            <h2 class="section-title">Látogasson el <br />irodánkba.</h2>
+            <h2 class="section-title" id="terkep-heading">Látogasson el irodánkba.</h2>
           </div>
           <a href="https://www.google.com/maps/dir/?api=1&destination=Debrecen,+Bem+tér+22,+4026" target="_blank"
-            class="maps-link">
-            Útvonaltervezés
-            <div class="maps-link-line"></div>
+            rel="noopener noreferrer" class="maps-link-btn">
+            Útvonaltervezés a Google Térképen
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
           </a>
         </div>
 
-        <div class="map-wrapper">
+        <div class="map-card reveal">
           <iframe id="google-map" width="100%" height="100%" style="border:0; display:none;" loading="lazy"
-            referrerpolicy="no-refferrer-when-downgrade"
+            referrerpolicy="no-referrer-when-downgrade"
             data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.135017415178!2d21.62345678901234!3d47.54123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47470e6789abcdef%3A0x123456789abcdef!2zRGVicmVjZW4sIEJlbSB0w6lyIDIyLCA0MDI2!5e0!3m2!1shu!2shu!4v1711554258000"
-            allowfullscreen>
+            allowfullscreen title="Iroda elhelyezkedése a Google Térképen">
           </iframe>
-          <div id="map-placeholder"
-            style="background: #f0f0f0; height: 450px; display: flex; align-items: center; justify-content: center;">
-            <p>A térkép megtekintéséhez el kell fogadnod a sütiket.</p>
+          <div id="map-placeholder">
+            <p>A térkép megtekintéséhez el kell fogadnod a külső tartalmakra vonatkozó sütiket.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Klasszikus Elegáns Lábléc -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="logo">
-            <div class="logo-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-scale" style="width: 1.5rem; height: 1.5rem; color: var(--color-paper);">
-                <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                <path d="M7 21h10" />
-                <path d="M12 3v18" />
-                <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
-              </svg>
-            </div>
+          <a href="./index.html" class="logo" style="margin-bottom: 0.5rem;">
+            <img src="./img/logo.png" alt="Dr. Pénzes Gergely logó" class="logo-icon-img" width="52" height="52">
             <div class="logo-text">
               <span class="logo-name">Dr. Pénzes Gergely</span>
               <span class="logo-sub">Egyéni ügyvéd</span>
             </div>
-          </div>
+          </a>
           <p class="footer-logo-desc">
-            Prémium jogi szolgáltatások Debrecen szívében. Szakértelem és bizalom minden ügyben.
+            Magas szakmai színvonalú, közvetlen és személyre szabott jogi szolgáltatások Debrecen szívében. Szakértelem
+            és diszkréció minden ügyben.
           </p>
-
-          <p class="footer-logo-desc">Elérhetőségek:</p>
-          <p>Mobil: +36 30 384 0135</p>
-          <p>Iroda: +36 52 322 900</p>
-          <p>Email: <a href="mailto:dr.penzes@enternet.hu" class="footer-link">dr.penzes@enternet.hu</a></p>
+          <div class="footer-contact-info">
+            <p>4026 Debrecen, Bem tér 22.</p>
+            <p>Mobil: <a href="tel:+36303840135">+36 30 384 0135</a> · Iroda: <a href="tel:+3652322900">+36 52 322
+                900</a></p>
+            <p>Email: <a href="mailto:dr.penzes@enternet.hu">dr.penzes@enternet.hu</a></p>
+          </div>
         </div>
 
         <div>
@@ -414,78 +464,87 @@
           <ul class="footer-links">
             <li><a href="#szakterületek" class="footer-link">Szakterületek</a></li>
             <li><a href="#rólam" class="footer-link">Rólam</a></li>
-            <li><a href="#kapcsolat" class="footer-link">Kapcsolat</a></li>
+            <li><a href="#kapcsolat" class="footer-link">Kapcsolatfelvétel</a></li>
+            <li><a href="#tovabbikepek" class="footer-link">Iroda galéria</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-title">Jogi nyilatkozat</h4>
+          <h4 class="footer-title">Jogi információk</h4>
           <ul class="footer-links">
             <li><a href="src/adatvedelem.html" class="footer-link">Adatkezelési tájékoztató</a></li>
             <li><a href="src/impresszum.html" class="footer-link">Impresszum</a></li>
-            <li><a href="src/sutik-kezelese.html" class="footer-link">Sütik kezelése</a> <a href="#"
-                id="reopen-cookie-settings" class="footer-link">(Süti beállítások)</a></li>
+            <li><a href="src/sutik-kezelese.html" class="footer-link">Sütik kezelése</a></li>
+            <li><a href="#" id="reopen-cookie-settings" class="footer-link">Süti beállítások módosítása</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© 2026 Dr. Pénzes Gergely Egyéni ügyvéd. Minden jog fenntartva.</p>
-        <div class="social-links">
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">Facebook</a>
-        </div>
+        <p class="copyright">© 2026 Dr. Pénzes Gergely Egyéni ügyvéd · Minden jog fenntartva.</p>
       </div>
     </div>
   </footer>
 
-  <section>
+  <!-- Süti Hozzájárulási Értesítés -->
+  <aside aria-label="Süti hozzájárulási értesítés">
     <div class="cookie">
-      <div>
-        <p>Ez a weboldal sütiket (cookie-kat) használ. Az oldal további
-          használatával beleegyezik a sütik használatába.</p>
+      <div class="cookie-content-wrapper">
+        <img src="./img/logo.png" alt="Dr. Pénzes Gergely logó" class="cookie-logo" width="36" height="36">
+        <p>Ez a weboldal sütiket (cookie-kat) használ a megfelelő működés és a Google Térkép beágyazás biztosításához.
+        </p>
       </div>
       <div class="cookie-gombok">
-        <div><button type="button" id="cookie-beallitasok" class="cookie-beallitasok">Süti beállítások</button></div>
-        <div><button type="button" id="cookie-elfogad" class="cookie-elfogad">Elfogadom</button></div>
+        <button type="button" id="cookie-beallitasok" class="cookie-beallitasok">Beállítások</button>
+        <button type="button" id="cookie-elfogad" class="cookie-elfogad">Elfogadom</button>
       </div>
     </div>
-  </section>
+  </aside>
 
-  <section>
-    <div id="cookie-modal" class="modal-overlay">
-      <div class="modal-content">
-        <h3>Süti beállítások</h3>
-        <p>Válaszd ki, mely sütik használatához járulsz hozzá:</p>
+  <!-- Süti Beállítások Modál -->
+  <div id="cookie-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <div class="modal-content">
+      <div class="modal-header-brand">
+        <img src="./img/logo.png" alt="Dr. Pénzes Gergely logó" class="modal-logo" width="40" height="40">
+        <h3 id="cookie-modal-title">Süti beállítások</h3>
+      </div>
+      <p>Válassza ki, mely sütik használatához járul hozzá:</p>
 
-        <div class="cookie-options">
-          <div class="option-item">
-            <div class="option-info">
-              <strong>Alapvető sütik</strong>
-              <span>Az oldal működéséhez elengedhetetlenek.</span>
-            </div>
-            <input type="checkbox" checked disabled>
+      <div class="cookie-options">
+        <div class="option-item">
+          <div class="option-info">
+            <strong>Alapvető működési sütik</strong>
+            <span>Az oldal zavartalan működéséhez szükségesek.</span>
           </div>
-          <div class="option-item">
-            <div class="option-info">
-              <strong>Külső tartalmak (Térkép)</strong>
-              <span>Lehetővé teszi a Google Maps megjelenítését.</span>
-            </div>
-            <label class="switch">
-              <input type="checkbox" id="check-maps">
-              <span class="slider"></span>
-            </label>
-          </div>
+          <input type="checkbox" checked disabled aria-label="Alapvető sütik engedélyezve">
         </div>
-
-        <div class="modal-buttons">
-          <button type="button" id="save-settings" class="btn-save">Beállítások mentése</button>
+        <div class="option-item">
+          <div class="option-info">
+            <strong>Külső tartalmak (Google Maps)</strong>
+            <span>Lehetővé teszi az interaktív térkép betöltését.</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="check-maps" aria-label="Google Maps beágyazás engedélyezése">
+            <span class="slider"></span>
+          </label>
         </div>
       </div>
-    </div>
-  </section>
 
-  <script type="module" src="./src/script.js"></script>
+      <div class="modal-buttons">
+        <button type="button" id="save-settings" class="btn-save">Beállítások mentése</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vissza a tetejére gomb -->
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Vissza a tetejére" title="Vissza a tetejére">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script defer src="./src/script.js"></script>
 </body>
 
 </html>
